@@ -1,10 +1,16 @@
 from flask import Flask, request, jsonify
 from chatgpt_bot_api_controller import ChatGPTBotAPI
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = Flask(__name__)
 
 # Initialize the ChatGPTBotAPI with OpenAI API key
-openai_api_key = "Paste you openai api key here"
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+if not openai_api_key:
+    raise ValueError("OpenAI API key not found in .env file")
 chatbot_api = ChatGPTBotAPI(openai_api_key)
 
 @app.route('/prompt', methods=['POST'])
