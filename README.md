@@ -57,7 +57,7 @@ body = {
 
 ## update prompt method
 request=PUT
-url=http://127.0.0.1:5000/response/prompt_index
+url=http://127.0.0.1:5000/promt/prompt_index
 
 body = {
     "new_prompt": "is react a library or framework"
@@ -66,7 +66,7 @@ body = {
 ## delete prompt method
 request=DELETE
 
-url=http://127.0.0.1:5000/response/prompt_index
+url=http://127.0.0.1:5000/promt/prompt_index
 
 ## Prompt response from open ai method
 request=GET
